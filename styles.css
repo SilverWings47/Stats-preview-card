@@ -1,132 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 body {
     background: hsl(233, 47%, 7%);
+    font-family: 'Inter', sans-serif;
 }
 
 main {
-    width: 65%;
-    margin: 8rem auto;
+    max-width: 70rem;
+    width: 90%;
+    margin: 5rem auto;
 }
 
-.container {
+.card {
     display: flex;
-    border-radius: 8px;
+    max-width: 100%;
+    margin: 5rem auto;
+    border-radius: 10px;
     overflow: hidden;
-}
-
-.text-part {
-    display: flex;
-    flex-direction: column;
     background: hsl(244, 38%, 16%);
-    padding: 60px;
-    gap: 20px;
 }
 
-.text-part h1 {
-    color: hsl(0, 0%, 100%);
-    font-size: 1.8rem;
+.card-text {
+    padding: 4.2em;
 }
 
-h1 span {
+.header-text {
+    color: #fff;
+    font-size: 2.5rem;
+    /* font-size: 2.6vw; */
+}
+
+.header-text span {
     color: hsl(277, 64%, 61%);
 }
 
-.text-part > p {
+.card-text .description {
+    margin-top: 2em;
+    font-size: 15px;
     color: hsla(0, 0%, 100%, 0.75);
-    font-size: 13px;
-    line-height: 23px;
     font-weight: 200;
-    width: 90%;
+    max-width: 80%;
+    line-height: 1.7;
 }
 
-.text-part .stats {
-    display: flex;
-    margin-top: 30px;
-    width: 90%;
-    align-items: center;
-    justify-content: space-between;
+.card-text .stats-box {
+    margin-top: 3.7em;
+    display: inline-flex;
+    gap: 5em;
 }
 
-.text-part .stats p {
-    display: flex;
-    flex-direction: column;
-    color: hsla(0, 0%, 100%, 0.6);
+.card-text .stats-box span {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 0.4em;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.card-text .stats-box p {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-weight: 200;
     text-transform: uppercase;
-    font-size: .6rem;
-    font-weight: 200;
+    font-size: 0.75rem;
     letter-spacing: 1px;
 }
 
-.text-part .stats p span {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: hsl(0, 0%, 100%);
-    margin-bottom: 5px;
+.card-image {
+    min-width: 540px;
+    position: relative;
 }
 
-.meeting-img {
-    background-color: hsl(277, 64%, 61%);
-}
-
-.meeting-img img {
-    width: 420px;
+.card-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
     height: 100%;
-    opacity: 0.5;
+    background: hsl(277, 64%, 61%);
+    opacity: 0.4;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
     text-align: center;
+}
+
+footer a {
+    color: hsl(277, 64%, 61%);
+}
+
+footer:not(a) {
     color: #fff;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-
-@media only screen and (max-width:600px) {
-    .container {
-        flex-direction: column-reverse;
+@media screen and (max-width: 425px) {
+    .card-text .header-text {
+        font-size: 1.5rem;
     }
 
-    .meeting-img {
-        order: 1;
+    .card-text  {
+        padding: 2rem 1.5rem !important; 
     }
 
-    .text-part {
-        padding: 40px;
-        align-items: center;
+    .card-text .description {
+        font-size: 0.8rem !important;
     }
 
-    .text-part h1 {
-        text-align: center;
-        padding: 0 30px;
-    }
-
-    .text-part > p {
-        text-align: center;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 45px;
-        justify-content: center;
-    }
-
-    .stats p {
-        align-items: center;
+    main {
+        margin-block: 2rem !important;
     }
 
     footer {
-        display: none;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+
+    .card-text .header-text {
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .card-text {
+        text-align: center;
+        padding: 2.5rem;
+    }
+
+    .card-text .description {
+        max-width: 100%;
+        margin-inline: auto;
+        font-size: 1.2rem;
+    }
+
+    main {
+        max-width: 71rem;
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .card-image {
+        min-width: initial;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-text .stats-box {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+        
+    }
+
+    .card-text .stats-box span {
+        font-size: 1.2rem;
+    }
+
+    .card-text .stats-box p {
+        font-size: 0.7rem;
     }
 }
