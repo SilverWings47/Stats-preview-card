@@ -1,0 +1,151 @@
+@import 'reset';
+@import 'config';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $clr-primary;
+}
+
+.card {
+    background-color: $clr-seconday;
+    margin: 1.3rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: grid;
+
+    @include media {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 70rem;  
+        max-height: 443px;
+    }
+}
+
+.card__img {
+    position: relative;
+    overflow: hidden;
+
+    @include media {
+        order: 2;
+    }  
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $clr-accent-dark;
+        opacity: .5;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+        width: 100%;
+    }
+}
+
+.card__content {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    @include media {
+        padding-inline: 5rem;
+        margin-top: 4.275rem;
+    }
+
+    .card__title {
+        text-align: center;
+        font-family: $ff-primary;
+        color: $clr-neutral-100;
+        letter-spacing: .875px;
+        font-size: 1.5rem;
+        margin-inline: 2rem;
+
+        @include media {
+            text-align: left;
+            margin-inline: 0;
+            font-size: 2.1rem;
+        }
+        
+        span {
+            color: $clr-accent;
+        }
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.5;
+        color: $clr-neutral-100;
+        font-family: $ff-primary;
+        letter-spacing: 1px;
+        font-size: 13px;
+        margin-inline: 2rem;
+
+        @include media {
+            margin: 0;
+            line-height: 1.8;
+            text-align: left;
+            font-size: 14px;
+            word-spacing: -2px;
+            font-weight: 100;
+        }
+    }
+
+    .card__stats {
+        display: grid;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+
+        @include media {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .stat {
+            display: grid;
+            gap: .3rem;
+            font-family: $ff-secondary;
+            color: $clr-neutral-400;
+
+            @include media {
+                gap: 0rem;
+            }
+        } 
+    }
+}
+
+.text-center {
+    text-align: center;
+
+    @include media {
+        text-align: left;
+    }
+}
+
+.text-white {
+    color: $clr-neutral-100;
+    font-weight: $fw-bold;
+
+    font-size: 1.275rem;
+    font-family: $ff-primary;
+
+    @include media {
+        font-size: 1.4rem;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .725rem;
+}
+
