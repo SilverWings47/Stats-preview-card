@@ -84,14 +84,14 @@ body {
         color: $clr-neutral-100;
         font-family: $ff-primary;
         letter-spacing: 1px;
-        font-size: 13px;
+        font-size: .8125rem;
         margin-inline: 2rem;
 
         @include media {
             margin: 0;
             line-height: 1.8;
             text-align: left;
-            font-size: 14px;
+            font-size: .875rem;
             word-spacing: -2px;
             font-weight: 100;
         }
